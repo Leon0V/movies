@@ -1,0 +1,26 @@
+[
+    {
+        "Name": "Free",
+        "Cost": "$0/mo",
+        "Description": "Free Access, contains ads",
+        "Max": "2 daily streams, 1 user"
+    },
+    {
+        "Name": "Standard",
+        "Cost": "$5/mo",
+        "Description": "Standard coverage, minimum ads",
+        "Max": "4 daily streams, 1 user"
+    },
+    {
+        "Name": "Premium",
+        "Cost": "$8/mo",
+        "Description": "Full Access, no ads",
+        "Max": "Unlimited streams, 1 user"
+    },
+    {
+        "Name": "Premium + Family",
+        "Cost": "$11/mo",
+        "Description": "Full Access, no ads",
+        "Max": "Unlimited streams, 5 users"
+    }
+]

@@ -1,8 +1,11 @@
 export default function Tittle() {
     return (
-        <div className="container-fluid text-center">
-            <div className="custom-title">
-                <p>Aqui está um componente</p>
+        <div class="custom-title">
+            <div class="card-body">
+                <h4>Movie List</h4>
+            </div>
+            <div>
+                <p>Listed movies with rates and description</p>
             </div>
         </div>
     )
