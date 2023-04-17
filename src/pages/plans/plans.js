@@ -16,7 +16,7 @@ export default function Plans() {
                                 <h6>{plan.Description}</h6>
                                 <h6>{plan.Max}</h6>
                                 <div className='container'>
-                                    <a href="*" >
+                                    <a href={`/plans/${plan.name}`}>
                                         <button type="button" class="btn btn-lg btn-block btn-outline-primary">Sign up for {plan.Name}</button>
                                     </a>
                                 </div>

@@ -2,6 +2,15 @@ import './movie.css';
 
 const movies = require('../../components/movie/movieList.json');
 
+function Watched ({Seen}) {
+    if (Seen){
+        return <p className='text-success'>already watched</p>
+    } else {
+        return  <p className='text-secondary'>not watched</p>
+    }
+
+}
+
 export default function Movie() {
     return (
         <div className="container-fluid text-center">
@@ -21,6 +30,7 @@ export default function Movie() {
                                         About
                                     </div>
                                 </a>
+                                <Watched Seen={movie.watched}/>
                                 </div>
                             </div>
                         </div>

@@ -11,7 +11,7 @@ export default function Details() {
             <h1>{movie}</h1>
 
             <div className="card">
-                <img src={'/assets/images/' + selectedMovie.picture} alt={selectedMovie.name} className="card-img-center img-detail round" />
+                <img src={'/assets/images/' + selectedMovie.picture} alt={selectedMovie.name} className="card-img-center round img-detail" />
                 <div className='card-body'>
                     <h5 className='card-tile'>
                         {selectedMovie.name}

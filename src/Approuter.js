@@ -5,7 +5,7 @@ import Details from './pages/details/details';
 import Plans from './pages/plans/plans';
 import NotFound from './pages/error/error';
 
-function Approuter() {
+function AppRouter() {
   return (
     <div>
       <Router> 
@@ -21,4 +21,4 @@ function Approuter() {
   );
 }
 
-export default Approuter;
+export default AppRouter;
