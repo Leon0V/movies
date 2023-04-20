@@ -1,9 +1,26 @@
+import { useEffect, useState } from 'react';
+
 const plans = require('../plans/planList.json')
 
 export default function Plans() {
 
+    const [resourceType, setResourseType] = useState('Free');
+    const [items, setItems] = useState([])
+    useEffect(() => {
+        fetch(`'../plans/planList.json'/${resourceType}`)
+            .then(response => response.json())
+            .then(json => setItems(json))
+    }, [resourceType]
+
+    )
+
+    function setSubscription() {
+        setResourseType(resourceType == `/plans/${plans.find.Name}`)
+        console.log(plans.Name)
+    }
     return (
         <div className="container-fluid text-center">
+
             <div class="row">
                 {plans.map((plan, i) => (
                     <div className="col-md-4" key={i}>
@@ -16,14 +33,20 @@ export default function Plans() {
                                 <h6>{plan.Description}</h6>
                                 <h6>{plan.Max}</h6>
                                 <div className='container'>
-                                    <a href={`/plans/${plan.name}`}>
-                                        <button type="button" class="btn btn-lg btn-block btn-outline-primary">Sign up for {plan.Name}</button>
-                                    </a>
+                                    {/* <a href={`/plans/${plan.name}`}>
+                                    </a> */}
+                                    <button type="button" class="btn btn-lg btn-block btn-outline-primary" onClick={setSubscription}>Sign up for {plan.Name}</button>
+
                                 </div>
                             </div>
                         </div>
                     </div>
-                ))}
+                )
+                )}
+                <h4>Your Current plan is</h4>
+                {items.map(item => {
+                    return <pre>{JSON.stringify(item)}</pre>
+                })}
             </div>
         </div>
     )

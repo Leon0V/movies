@@ -1,15 +1,16 @@
 import './movie.css';
+import SeenMovie from './seenMovie';
 
 const movies = require('../../components/movie/movieList.json');
 
-function Watched ({Seen}) {
-    if (Seen){
-        return <p className='text-success'>already watched</p>
-    } else {
-        return  <p className='text-secondary'>not watched</p>
-    }
+// function Watched({ Seen }) {
+//     if (Seen) {
+//         return <p className='text-success'>already watched</p>
+//     } else {
+//         return <p className='text-secondary'>not watched</p>
+//     }
 
-}
+// }
 
 export default function Movie() {
     return (
@@ -23,15 +24,16 @@ export default function Movie() {
                                 <h5 className='card-tile'>
                                     {movie.name}
                                 </h5>
-                                <p className='card-text'>{movie.genre}</p>                              
+                                <p className='card-text'>{movie.genre}</p>
                                 <div className='container'>
-                                <a href={`/details/${movie.name}`} >
-                                    <div className="btn btn-primary">
-                                        About
-                                    </div>
-                                </a>
-                                <Watched Seen={movie.watched}/>
+                                    <a href={`/details/${movie.name}`} >
+                                        <div className="btn btn-primary">
+                                            About
+                                        </div>
+                                    </a>
                                 </div>
+                                {/* <Watched Seen={movie.watched} /> */}
+                                <SeenMovie />
                             </div>
                         </div>
                     </div>
