@@ -1,17 +1,20 @@
 import React, { useState } from 'react';
 
-function SeenMovie() {
-    let [isSeen, setSeen] = useState("Movie not Watched")
+// const movies = require('../../components/movie/movieList.json');
+
+function SeenMovie({ Movie }) {
+    let [isSeen, setSeen] = useState(Movie.watched ? "Movie watched" : "Movie not Watched")
 
     function countSeen() {
-        if (isSeen === "Movie not Watched") {
+        // if (isSeen === "Movie not Watched") {
 
-            setSeen(isSeen = "Movie Already Watched");
-        }
-        else {
-            setSeen(isSeen = "Movie not Watched");
-        }
-
+        //     setSeen(isSeen = "Movie Already Watched");
+        // }
+        // else {
+        //     setSeen(isSeen = "Movie not Watched");
+        // }
+        Movie.watched = !Movie.watched
+        setSeen(isSeen = Movie.watched ? "Movie watched" : "Movie not Watched")
     }
 
 
@@ -20,7 +23,7 @@ function SeenMovie() {
             {/* <button onClick={countSeen}>Play</button>
             <br></br>
             <span>{isSeen}</span> */}
-            <div className="btn btn-primary" onClick={countSeen}>
+            <div className="btn btn-primary" id={Movie.name} onClick={countSeen}>
                 Watched the movie?
             </div>
             <p>

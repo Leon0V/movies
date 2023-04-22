@@ -33,7 +33,7 @@ export default function Movie() {
                                     </a>
                                 </div>
                                 {/* <Watched Seen={movie.watched} /> */}
-                                <SeenMovie />
+                                <SeenMovie Movie={movie} />
                             </div>
                         </div>
                     </div>

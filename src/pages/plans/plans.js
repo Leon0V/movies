@@ -1,22 +1,16 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 const plans = require('../plans/planList.json')
 
 export default function Plans() {
 
-    const [resourceType, setResourseType] = useState('Free');
-    const [items, setItems] = useState([])
-    useEffect(() => {
-        fetch(`'../plans/planList.json'/${resourceType}`)
-            .then(response => response.json())
-            .then(json => setItems(json))
-    }, [resourceType]
+    let [resourceType, setResourseType] = useState('Free');
 
-    )
-
-    function setSubscription() {
-        setResourseType(resourceType == `/plans/${plans.find.Name}`)
-        console.log(plans.Name)
+    function setSub(planName) {
+        // console.log(event)
+        // console.log(plans.filter(e => e.Name === event.target.id)[0].Name)
+        // setResourseType(resourceType = plans.filter(e => e.Name === event.target.id)[0].Name)
+        setResourseType(resourceType = planName)
     }
     return (
         <div className="container-fluid text-center">
@@ -35,7 +29,7 @@ export default function Plans() {
                                 <div className='container'>
                                     {/* <a href={`/plans/${plan.name}`}>
                                     </a> */}
-                                    <button type="button" class="btn btn-lg btn-block btn-outline-primary" onClick={setSubscription}>Sign up for {plan.Name}</button>
+                                    <button type="button" id={plan.Name} class="btn btn-lg btn-block btn-outline-primary" onClick={() => setSub(plan.Name)}>Sign up for {plan.Name}</button>
 
                                 </div>
                             </div>
@@ -43,10 +37,7 @@ export default function Plans() {
                     </div>
                 )
                 )}
-                <h4>Your Current plan is</h4>
-                {items.map(item => {
-                    return <pre>{JSON.stringify(item)}</pre>
-                })}
+                <h4>Your Current plan is {resourceType}</h4>
             </div>
         </div>
     )
