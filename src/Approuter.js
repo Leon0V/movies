@@ -8,13 +8,13 @@ import NotFound from './pages/error/error';
 function AppRouter() {
   return (
     <div>
-      <Router> 
+      <Router>
         <Routes>
-          <Route path='/' element={<Home />}/>
-          <Route path='/about' element={<About />}/>
-          <Route path='/details/:movie' element={<Details />}/>
-          <Route path='/plans' element={<Plans />}/>
-          <Route path='*' element={<NotFound/>} />
+          <Route path='/' element={<Home />} />
+          <Route path='/about' element={<About />} />
+          <Route path='/details/:movie' element={<Details />} />
+          <Route path='/plans' element={<Plans />} />
+          <Route path='*' element={<NotFound />} />
         </Routes>
       </Router>
     </div>

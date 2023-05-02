@@ -1,17 +1,18 @@
 import { useState } from 'react';
+import Register from './register';
 
 const plans = require('../plans/planList.json')
 
 export default function Plans() {
 
     let [resourceType, setResourseType] = useState('Free');
+    let [selectedPlanIndex, setSelectedPlanIndex] = useState(-1);
 
-    function setSub(planName) {
-        // console.log(event)
-        // console.log(plans.filter(e => e.Name === event.target.id)[0].Name)
-        // setResourseType(resourceType = plans.filter(e => e.Name === event.target.id)[0].Name)
-        setResourseType(resourceType = planName)
+    function setSub(planName, index) {
+        setResourseType(resourceType = planName);
+        setSelectedPlanIndex(index);
     }
+
     return (
         <div className="container-fluid text-center">
 
@@ -27,17 +28,14 @@ export default function Plans() {
                                 <h6>{plan.Description}</h6>
                                 <h6>{plan.Max}</h6>
                                 <div className='container'>
-                                    {/* <a href={`/plans/${plan.name}`}>
-                                    </a> */}
-                                    <button type="button" id={plan.Name} class="btn btn-lg btn-block btn-outline-primary" onClick={() => setSub(plan.Name)}>Sign up for {plan.Name}</button>
-
+                                    <button type="button" id={plan.Name} class={`btn btn-lg btn-block ${selectedPlanIndex === i ? 'btn-primary' : 'btn-outline-primary'}`} onClick={() => setSub(plan.Name, i)}>Sign up for {plan.Name}</button>
                                 </div>
                             </div>
                         </div>
                     </div>
-                )
-                )}
-                <h4>Your Current plan is {resourceType}</h4>
+                ))}
+                <h4>You are going to sign up for the {resourceType} plan.</h4>
+                <Register />
             </div>
         </div>
     )

@@ -1,32 +1,47 @@
+import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import '../../components/movie/movie.css';
 
 export default function Details() {
 
-    const { movie } = useParams();
-    const selectedMovie = require('../../components/movie/movieList.json').find( x => x.name === movie);
+    const { id } = useParams();
+    const [selectedMovie, setSelectedMovie] = useState(null);
+
+    useEffect(() => {
+        async function fetchData() {
+            try {
+                const response = await fetch(`https://my-json-server.typicode.com/marycamila184/moviedetails/moviedetails/${id}`);
+                const movie = await response.json();
+                setSelectedMovie(movie);
+            } catch (error) {
+                console.error(error);
+            }
+        }
+        fetchData();
+    }, [id]);
+
+    if (!selectedMovie) {
+        return <div>Loading...</div>;
+    }
+
+    console.log(selectedMovie);
 
     return (
         <div>
-            <h1>{movie}</h1>
+            <h1>{selectedMovie?.titulo}</h1>
 
             <div className="card">
-                <img src={'/assets/images/' + selectedMovie.picture} alt={selectedMovie.name} className="card-img-center round img-detail" />
+                <img src={selectedMovie?.poster} alt={selectedMovie?.titulo} className="card-img-center round img-detail" />
                 <div className='card-body'>
                     <h5 className='card-tile'>
-                        {selectedMovie.name}
+                        {selectedMovie?.titulo}
                     </h5>
                     <h6>
-                        Description
+                        <p>{selectedMovie?.sinopse}</p>
+                        <p>{selectedMovie?.ano}</p>
+                        <p>Metacritic: {selectedMovie?.nota}</p>
                     </h6>
-                    <p className='card-text'>{selectedMovie.description}</p>
-                    <p>{selectedMovie.duration}</p>
-                    <h6>
-                        <p>{selectedMovie.genre}</p>
-                        <p>{selectedMovie.year}</p>
-                        <p>Metacritic: {selectedMovie.score}</p>
-                    </h6>
-                    <a href={`https://youtube.com/results?search_query=${selectedMovie.name} Trailer`} >
+                    <a href={`https://youtube.com/results?search_query=${selectedMovie?.titulo} Trailer`} >
                         <div className="btn btn-primary">
                             Trailer
                         </div>
@@ -35,7 +50,5 @@ export default function Details() {
                 </div>
             </div>
         </div>
-
-
-    )
+    );
 }

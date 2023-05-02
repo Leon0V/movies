@@ -1,38 +1,33 @@
+import { useState, useEffect } from 'react';
 import './movie.css';
 import SeenMovie from './seenMovie';
 
-const movies = require('../../components/movie/movieList.json');
-
-// function Watched({ Seen }) {
-//     if (Seen) {
-//         return <p className='text-success'>already watched</p>
-//     } else {
-//         return <p className='text-secondary'>not watched</p>
-//     }
-
-// }
-
 export default function Movie() {
+    const [movies, setMovies] = useState([]);
+
+    useEffect(() => {
+        fetch('https://my-json-server.typicode.com/marycamila184/movies/movies')
+            .then((response) => response.json())
+            .then((movies) => setMovies(movies));
+    }, []);
     return (
         <div className="container-fluid text-center">
-            <div class="row">
-                {movies.map((movie, i) => (
-                    <div className="col-md-4" key={i}>
+            <div className="row">
+                {movies.map((movie) => (
+                    <div className="col-md-4" key={movie.id}>
                         <div className="card">
-                            <img src={'/assets/images/' + movie.picture} alt={movie.name} className="card-img-center round img-detail" />
+                            <img src={movie.poster} alt={movie.titulo} className="card-img-center round img-detail" />
                             <div className='card-body'>
                                 <h5 className='card-tile'>
-                                    {movie.name}
+                                    {movie.titulo}
                                 </h5>
-                                <p className='card-text'>{movie.genre}</p>
                                 <div className='container'>
-                                    <a href={`/details/${movie.name}`} >
+                                    <a href={`/details/${movie.id}`} >
                                         <div className="btn btn-primary">
                                             About
                                         </div>
                                     </a>
                                 </div>
-                                {/* <Watched Seen={movie.watched} /> */}
                                 <SeenMovie Movie={movie} />
                             </div>
                         </div>

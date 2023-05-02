@@ -1,0 +1,8 @@
+.register-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 55%;
+    margin: 0 auto;
+    height: 100%;
+}
