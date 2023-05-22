@@ -16,11 +16,15 @@ export default function Movie() {
                 {movies.map((movie) => (
                     <div className="col-md-4" key={movie.id}>
                         <div className="card">
-                            <img src={movie.poster} alt={movie.titulo} className="card-img-center round img-detail" />
+                            <img src={movie.poster} alt={movie.titulo} className="img-test" />
                             <div className='card-body'>
-                                <h5 className='card-tile'>
+                                <h3 className='card-tile'>
                                     {movie.titulo}
-                                </h5>
+                                </h3>
+                                <h6>
+                                    <p>Metacritic: {movie.nota}</p>
+                                </h6>
+
                                 <div className='container'>
                                     <a href={`/details/${movie.id}`} >
                                         <div className="btn btn-primary">

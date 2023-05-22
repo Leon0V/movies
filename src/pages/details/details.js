@@ -39,7 +39,7 @@ export default function Details() {
                     <h6>
                         <p>{selectedMovie?.sinopse}</p>
                         <p>{selectedMovie?.ano}</p>
-                        <p>Metacritic: {selectedMovie?.nota}</p>
+                        {/* <p>Metacritic: {selectedMovie?.nota}</p> */}
                     </h6>
                     <a href={`https://youtube.com/results?search_query=${selectedMovie?.titulo} Trailer`} >
                         <div className="btn btn-primary">
