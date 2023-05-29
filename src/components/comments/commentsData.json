@@ -1,0 +1,119 @@
+[
+    {
+        "movie": 85,
+        "comments": [
+            {
+                "user": "John",
+                "comment": "Great movie!"
+            },
+            {
+                "user": "Sarah",
+                "comment": "One of my favorites."
+            }
+        ]
+    },
+    {
+        "movie": 14,
+        "comments": [
+            {
+                "user": "Michael",
+                "comment": "Looking forward to watching it."
+            },
+            {
+                "user": "Emily",
+                "comment": "Not a fan of this one."
+            }
+        ]
+    },
+    {
+        "movie": 96,
+        "comments": [
+            {
+                "user": "David",
+                "comment": "Epic battle scenes!"
+            },
+            {
+                "user": "Emma",
+                "comment": "Loved the storyline."
+            }
+        ]
+    },
+    {
+        "movie": 78,
+        "comments": [
+            {
+                "user": "Olivia",
+                "comment": "Emotional ending."
+            },
+            {
+                "user": "James",
+                "comment": "Must-watch for Marvel fans."
+            }
+        ]
+    },
+    {
+        "movie": 36,
+        "comments": [
+            {
+                "user": "Sophia",
+                "comment": "Gal Gadot was amazing!"
+            },
+            {
+                "user": "Daniel",
+                "comment": "Action-packed."
+            }
+        ]
+    },
+    {
+        "movie": 39,
+        "comments": [
+            {
+                "user": "Ava",
+                "comment": "Benedict Cumberbatch nailed it!"
+            },
+            {
+                "user": "Mia",
+                "comment": "Mind-bending visuals."
+            }
+        ]
+    },
+    {
+        "movie": 80,
+        "comments": [
+            {
+                "user": "Liam",
+                "comment": "Hilarious and entertaining."
+            },
+            {
+                "user": "Isabella",
+                "comment": "Soundtrack was awesome."
+            }
+        ]
+    },
+    {
+        "movie": 43,
+        "comments": [
+            {
+                "user": "Noah",
+                "comment": "Robert Downey Jr. is the best Iron Man!"
+            },
+            {
+                "user": "Abigail",
+                "comment": "Action-packed sequel."
+            }
+        ]
+    },
+    {
+        "movie": 61,
+        "comments": [
+            {
+                "user": "Ethan",
+                "comment": "Classic origin story."
+            },
+            {
+                "user": "Charlotte",
+                "comment": "Tony Stark's charisma shines through."
+            }
+        ]
+    }
+]

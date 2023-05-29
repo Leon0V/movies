@@ -1,14 +1,12 @@
-.details-container {
-    max-width: 400px;
-    /* Adjust the value as needed */
-    margin: 0 auto;
-    /* Centers the container horizontally */
-}
-
-.card-img {
-    width: 10%;
-    /* Adjust the value as needed */
+.custom-img {
+    width: 100%;
     height: auto;
     object-fit: contain;
-    /* Maintains the image's aspect ratio */
+}
+
+.details-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }

@@ -1,4 +1,12 @@
+import { useLocation } from 'react-router-dom';
+
 export default function Navbar() {
+
+    //an import and a setting was made in order to put the contidional for the location as to hide the register function 
+    //when inside the register URL (as such, changes were made in app.js and appRouter.js)
+    const location = useLocation();
+    const { pathname } = location;
+
     return (
         <nav class="navbar navbar-dark bg-dark navbar-expand-lg bg-body-tertiary">
             <div class="container-fluid">
@@ -14,9 +22,11 @@ export default function Navbar() {
                         <li class="nav-item">
                             <a class="nav-link" href="/about">About</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/plans">Plans</a>
-                        </li>
+                        {pathname !== '/register' && (
+                            <li className="nav-item">
+                                <a className="nav-link" href="/register">Register</a>
+                            </li>
+                        )}
                         <li class="nav-item">
                             <a class="nav-link disabled">Disabled</a>
                         </li>
